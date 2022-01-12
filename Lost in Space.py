@@ -31,3 +31,7 @@ def title():
     time.sleep(2)
     print(creds)
     time.sleep(2)
+
+    terms = input("By hitting enter, you are agreeing not to use elements from this game"
+              "\nwithout permission from the developer. ")
+    
