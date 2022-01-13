@@ -32,6 +32,22 @@ def title():
     print(creds)
     time.sleep(2)
 
-terms = input("By hitting enter, you are agreeing not to use elements from this game"
-              "\nwithout permission from the developer. ")
-    
+
+def startgame():
+    print("asd")
+
+
+
+accept = False
+
+if not accept:
+    title()
+    time.sleep(1)
+    terms = input("By hitting enter, you are agreeing not to use elements from this game"
+                  "\nwithout permission from the developer. ")
+    if terms == "":
+        startgame()
+        accept = True
+
+    else:
+        exit()
