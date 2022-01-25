@@ -1,6 +1,6 @@
 import time
 from functions import title
-from level_1 import firstlevel
+from level_1 import partone
 
 
 accept = False
@@ -11,8 +11,9 @@ if not accept:
     terms = input("By hitting enter, you are agreeing not to use elements from this game"
                   "\nwithout permission from the developer. ")
     if terms == "":
-        firstlevel()
         accept = True
+        partone()
+
 
     else:
         exit()
