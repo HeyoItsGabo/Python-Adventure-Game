@@ -1,6 +1,5 @@
 import time
-from functions import title
-from level_1 import partone
+from functions import title, startgame
 
 
 accept = False
@@ -12,8 +11,7 @@ if not accept:
                   "\nwithout permission from the developer. ")
     if terms == "":
         accept = True
-        partone()
-
+        startgame()
 
     else:
         exit()
