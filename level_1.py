@@ -1,6 +1,10 @@
 import time
 
 
+def level1():
+    partone()
+
+
 def partone():
     print("You are on Starship Epsilon-7, headed for the planet Europa. "
           "\nYou are peacefully asleep, in your bunk. You are awoken a shrieking"
@@ -12,11 +16,13 @@ def partone():
     getup = input()
 
     if int(getup) == 1:
-        print("Choosing to ignore the sound, you go back to sleep.")
+        print("Choosing to ignore the sound, you go back to sleep. ")
+        exit()
 
 
     elif int(getup) == 2:
-        print("yoink")
+        print("You live. Nice")
+        parttwo()
 
 
     else:
