@@ -1,5 +1,5 @@
 import time
-
+from level_1 import level1
 
 def title():
     line1 = r"""  _              _        _            ____                    """
@@ -30,3 +30,7 @@ def title():
     print(line6)
     time.sleep(1)
     print(creds)
+
+
+def startgame():
+    level1()
