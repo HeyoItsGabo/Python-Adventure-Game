@@ -1,7 +1,7 @@
 import time
 
 
-def level1():
+def startgame():
     partone()
 
 
@@ -22,14 +22,17 @@ def partone():
 
     elif int(getup) == 2:
         print("You live. Nice")
-        parttwo()
-
-
+        
+        
     else:
         print("1 or 2")
 
 
 def parttwo():
+    pass
+
+
+def partthree():
     pass
 
 
