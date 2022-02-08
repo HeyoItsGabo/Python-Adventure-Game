@@ -1,7 +1,7 @@
 import time
 
 
-def startgame():
+def level1():
     partone()
 
 
@@ -16,24 +16,20 @@ def partone():
     getup = input()
 
     if int(getup) == 1:
-        print("Choosing to ignore the sound, you go back to sleep. ")
-        exit()
-
+        print("Choosing to ignore the sound, you go back to sleep. You die.")
+        partone()  # Restarts the level if you choose the wrong path
 
     elif int(getup) == 2:
-        print("You live. Nice")
-        
-        
+        print("As your feet touch the metal floor, you notice that it is "
+              "\nmuch hotter than usual. ")
+        parttwo()  # Starts the next part
+
     else:
         print("1 or 2")
 
 
 def parttwo():
-    pass
-
-
-def partthree():
-    pass
+    print("")
 
 
 def partthree():
