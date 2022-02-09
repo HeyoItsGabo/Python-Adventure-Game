@@ -1,4 +1,5 @@
 import time
+from termcolor import colored
 
 
 def level1():
@@ -21,14 +22,13 @@ def partone():
                   "\nthe planet below, taking you with it.")
 
             while True:  # Will not accept any input except for enter
-                restart = input("You have died. Input the enter key to restart. ")
+                restart = input(colored("You have died. Input the enter key to restart. ", 'red'))
 
                 if restart == "":
                     level1()  # Restarts the level if you choose the wrong path
                     return False  # Satisfies the while True statement
                 else:
                     time.sleep(0.3)
-                    print("Please hit the enter key to continue. ")
 
         elif int(getup) == 2:  # Correct path
             print("As your feet touch the metal floor, you notice that it is "
