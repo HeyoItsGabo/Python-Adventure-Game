@@ -8,3 +8,5 @@ cprint("YEETUS", 'blue')
 cprint("YEETUS", 'magenta')
 cprint("YEETUS", 'cyan')
 cprint("YEETUS", 'white')
+
+cprint("\nYEETUS", 'red', attrs=['underline'])
