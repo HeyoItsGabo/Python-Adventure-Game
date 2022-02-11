@@ -1,25 +1,26 @@
 import time
-from termcolor import colored
+from termcolor import cprint, colored
 
 
 def level1():
-    print("You are on Starship Epsilon-7, headed for the planet Europa. "
-          "\nYou are peacefully asleep, in your bunk. You are awoken a shrieking"
-          "\nmetallic sound, as the starship slows down considerably.")
+    cprint("You are on Starship Epsilon-7, headed for the planet Europa. "
+           "\nYou are peacefully asleep, in your bunk. You are awoken a shrieking"
+           "\nmetallic sound, as the starship slows down considerably.", 'green')
     partone()
 
 
-def partone():
+def partone():  # Part 1 of level 1
+    time.sleep(1)
+    cprint("What do you do?", 'green')
     time.sleep(0.5)
-    print("What do you do?")
-    print("1- Go back to sleep")
-    print("2- Get out of bed")
+    cprint("1- Go back to sleep", 'green')
+    cprint("2- Get out of bed", 'green')
     try:
         getup = input()
 
         if int(getup) == 1:  # Incorrect path
-            print("Choosing to ignore the sound, you go back to sleep. The spaceship plummets to "
-                  "\nthe planet below, taking you with it.")
+            cprint("Choosing to ignore the sound, you go back to sleep. The spaceship plummets to "
+                   "\nthe planet below, taking you with it.", 'green')
 
             while True:  # Will not accept any input except for enter
                 restart = input(colored("You have died. Input the enter key to restart. ", 'red'))
@@ -31,18 +32,20 @@ def partone():
                     time.sleep(0.3)
 
         elif int(getup) == 2:  # Correct path
-            print("As your feet touch the metal floor, you notice that it is "
-                  "\nmuch hotter than usual. ")
+
+            cprint("As your feet touch the metal floor, you notice that it is "
+                   "\nmuch hotter than usual. By the door, you notice two pairs "
+                   "\nof shoes. A pair of flip flops, and a pair of work boots. ", 'green')
             parttwo()  # Starts the next part
 
-    except ValueError:  # Had to include this or else Python gets picky
-        print("Please enter 1 or 2.")
+    except ValueError:  # Had to include this or else Python gets picky. Definitely need to troubleshoot
+        cprint("Please enter 1 or 2.", 'green')
         partone()
 
 
-def parttwo():
+def parttwo():  # Part 2 of level 1
     print("")
 
 
-def partthree():
+def partthree():  # Part 3 of level 1
     pass
