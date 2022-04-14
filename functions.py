@@ -102,3 +102,49 @@ def Backpack(choice, codelocation, codevalue):
         cprint("You find no code.", 'green')
         print("")
         
+        
+def Mirror(choice, codelocation, codevalue):
+    print("")
+    print("Glancing in the mirror, You see fingerprints. Fingerprints belonging"
+          "\nto someone else.")
+    if choice == codelocation:
+        print("As you study your reflection, you notice the number " + str(codevalue) + ".")
+        print("")
+    else:
+        print("You find no code.")
+        print("")
+
+
+def Bookshelf(choice, codelocation, codevalue):
+    print("")
+    print("A steel bookshelf bolted to the wall. Many of the books have not been opened"
+          "\n in years.")
+    if choice == codelocation:
+        print("You notice all the books are of the same volume, that"
+              "\n volume number being " + str(codevalue) + ".")
+        print("")
+    else:
+        print("You find no code.")
+        print("")
+
+
+def Spacesuit(choice, codelocation, codevalue):
+    print("")
+    print("The spacesuit lays still in the locker. It looks like it has been used recently.")
+    if choice == codelocation:
+        print("Scratched into the helmet, you can faintly see the number " + str(codevalue) + ".")
+        print("")
+    else:
+        print("You find no code.")
+        print("")
+
+
+def Bed(choice, codelocation, codevalue):
+    print("")
+    print("You pick up the shaggy, tattered pillow and see a piece of paper.")
+    if choice == codelocation:
+        print("Written on the paper, you see the number " + str(codevalue) + ".")
+        print("")
+    else:
+        print("You find no code.")
+        print("")
