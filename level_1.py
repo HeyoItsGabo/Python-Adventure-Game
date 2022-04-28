@@ -1,7 +1,7 @@
 import time
 import random
 from tqdm import tqdm
-from functions import door, Window, Backpack, Mirror, Bookshelf, Spacesuit
+from functions import door, Window, Backpack, Mirror, Bookshelf, Spacesuit, Bed, Suitcase
 
 HasBackPack = False
 HasHealthPack = False
@@ -31,10 +31,8 @@ def menu(itemlist, question):
             print("Selection must be whole number between 0-9:")
     return result
         
-    
 
-
-def level1():
+def level_1():
     time.sleep(1)
     print("Loading level... ")
     time.sleep(1)
@@ -65,7 +63,7 @@ def level1():
                     if restart == "":
                         print("-------------------------------------")
                         time.sleep(1)
-                        level1()
+                        level_1()
                     else:
                         time.sleep(1)
 
@@ -121,10 +119,13 @@ def level1():
             Bookshelf(choice, code2location, codesegment2)
         elif choice == 5:
             Spacesuit(choice, code2location, codesegment2)
-        else:
+        elif choice == 6:
+            Bed(choice, code2location, codesegment2)
+        elif choice == 7:
+            Suitcase(choice, code3location, codesegment3)
             result = door(code)
         if result == 1:
             break
 
 
-level1()
+level_1()

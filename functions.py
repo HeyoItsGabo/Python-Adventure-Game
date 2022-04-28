@@ -148,3 +148,14 @@ def Bed(choice, codelocation, codevalue):
     else:
         print("You find no code.")
         print("")
+
+
+def Suitcase(choice, codelocation, codevalue):
+    print("")
+    print("The suitcase seems rather familiar. Strange.")
+    if choice == codelocation:
+        print("On the bottom, you feel the number " + str(codevalue) + ".")
+        print("")
+    else:
+        print("You find no code.")
+        print("")

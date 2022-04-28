@@ -1,8 +1,8 @@
 import time
 from functions import title
-from level_1 import level1
-from level_2 import level2
-from level_3 import level3
+from level_1 import level_1
+from level_2 import level_2
+from level_3 import level_3
 from termcolor import cprint, colored
 
 
@@ -26,9 +26,9 @@ def terms():
         while True:  # Conditional for accepting the rules of the game
             accept_rules = input("Hit the enter key if you understand the rules of this game. ")
             if accept_rules == "":
-                level1()  # Starts level 1
-                level2()  # Starts level 2 once level 1 is completed
-                level3()  # Starts level 3 once both level 1 and 2 are completed
+                level_1()  # Starts level 1
+                level_2()  # Starts level 2 once level 1 is completed
+                level_3()  # Starts level 3 once both level 1 and 2 are completed
                 return False
             else:
                 time.sleep(0.3)
