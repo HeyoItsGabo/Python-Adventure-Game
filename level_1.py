@@ -1,7 +1,7 @@
 import time
 import random
 from tqdm import tqdm
-from functions import door, Window, Backpack, Mirror, Bookshelf, Spacesuit, Bed, Suitcase
+from functions import door, Window, Backpack, Mirror, Bookshelf, Spacesuit, Bed, Suitcase, Sink, Toolbox
 
 HasBackPack = False
 HasHealthPack = False
@@ -123,6 +123,10 @@ def level_1():
             Bed(choice, code2location, codesegment2)
         elif choice == 7:
             Suitcase(choice, code3location, codesegment3)
+        elif choice == 8:
+            Sink(choice, code3location, codesegment3)
+        elif choice == 9:
+            Toolbox(choice, code3location, codesegment3)
             result = door(code)
         if result == 1:
             break

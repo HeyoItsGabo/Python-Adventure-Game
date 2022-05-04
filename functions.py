@@ -1,18 +1,13 @@
 import time
 from termcolor import colored, cprint
 
-
+# "Animation" for title screen, with credits
 def title():
     line1 = r"""  _              _        _            ____                    """
-
     line2 = r""" | |    ___  ___| |_     (_)_ __      / ___| _ __   __ _  ___ ___ """
-
     line3 = r""" | |   / _ \/ __| __|    | | '_ \     \___ \| '_ \ / _` |/ __/ _ \ """
-
     line4 = r""" | |__| (_) \__ \ |_     | | | | |     ___) | |_) | (_| | (_|  __/ """
-
     line5 = r""" |_____\___/|___/\__|    |_|_| |_|    |____/| .__/ \__,_|\___\___| """
-
     line6 = r"""                                            |_| """
 
     creds = "Developed by Gabe Wightman"
@@ -33,6 +28,7 @@ def title():
     cprint(creds, 'green')
 
 
+# Menu for items to find door code
 def menu(list, question):
     for item in list:
         print(list.index(item), item)
@@ -46,6 +42,7 @@ def menu(list, question):
     return result
 
 
+# Input for code to door
 def door(code):
     cprint("You walk to the bulkhead, and see a keypad. Based on what you see,"
            "\nthe code must be 4 digits long. ")
@@ -80,6 +77,7 @@ def door(code):
         return 0
 
 
+# Code #1 check location: Window
 def Window(choice, codelocation, codevalue):
     print("")
     cprint("You look at the window. Only four inches of reinforced glass"
@@ -91,7 +89,8 @@ def Window(choice, codelocation, codevalue):
         cprint("You find no code.", 'green')
         print("")
     
-    
+
+# Code #1 check location: Backpack
 def Backpack(choice, codelocation, codevalue):
     print("")
     cprint("Rifling through the backpack, you find a scratched up notebook.", 'green')
@@ -102,7 +101,8 @@ def Backpack(choice, codelocation, codevalue):
         cprint("You find no code.", 'green')
         print("")
         
-        
+
+# Code #1 check location: Mirror
 def Mirror(choice, codelocation, codevalue):
     print("")
     print("Glancing in the mirror, You see fingerprints. Fingerprints belonging"
@@ -115,6 +115,7 @@ def Mirror(choice, codelocation, codevalue):
         print("")
 
 
+# Code #2 check location: Bookshelf
 def Bookshelf(choice, codelocation, codevalue):
     print("")
     print("A steel bookshelf bolted to the wall. Many of the books have not been opened"
@@ -127,7 +128,7 @@ def Bookshelf(choice, codelocation, codevalue):
         print("You find no code.")
         print("")
 
-
+# Code #2 check location: Spacesuit
 def Spacesuit(choice, codelocation, codevalue):
     print("")
     print("The spacesuit lays still in the locker. It looks like it has been used recently.")
@@ -139,6 +140,7 @@ def Spacesuit(choice, codelocation, codevalue):
         print("")
 
 
+# Code #2 check location: Bed
 def Bed(choice, codelocation, codevalue):
     print("")
     print("You pick up the shaggy, tattered pillow and see a piece of paper.")
@@ -150,6 +152,7 @@ def Bed(choice, codelocation, codevalue):
         print("")
 
 
+# Code #3 check location: Suitcase
 def Suitcase(choice, codelocation, codevalue):
     print("")
     print("The suitcase seems rather familiar. Strange.")
@@ -159,3 +162,28 @@ def Suitcase(choice, codelocation, codevalue):
     else:
         print("You find no code.")
         print("")
+
+
+# Code #3 check location: Sink
+def Sink(choice, codelocation, codevalue):
+    print("")
+    print("The leaky faucet drips persistently and annoyingly, as if on purpose.")
+    if choice == codelocation:
+        print("The faucet drips in sequences of " + str(codevalue) + ".")
+        print("")
+    else:
+        print("You find no code.")
+        print("")
+
+
+# Code #3 check location: Toolbox
+def Toolbox(choice, codelocation, codevalue):
+    print("")
+    print("The red toolbox has a few basic tools, but nothing that would help you.")
+    if choice == codelocation:
+        print("You find " + str(codevalue) + "wrenches in the case.")
+        print("")
+    else:
+        print("You find no code.")
+        print("")
+
