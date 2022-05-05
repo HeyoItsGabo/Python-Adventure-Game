@@ -1,23 +1,23 @@
-import time
+import time as t
 from functions import title
 from level_1 import level_1
 from level_2 import level_2
 from level_3 import level_3
-from termcolor import cprint, colored
+from termcolor import cprint
 
 
 def terms():
     title()  # Starts the title sequence
-    time.sleep(1)
+    t.sleep(1)
 
     accept = input("By hitting enter, you are agreeing not to use elements from this game"
                    "\nwithout permission from the developer. ")
     if accept == "":
-        time.sleep(1)
+        t.sleep(1)
         print("")  # Formatting
         cprint("NOTE: You will need an internet connection for some puzzles!", attrs=['underline'])
         print("")  # Formatting
-        time.sleep(2)
+        t.sleep(2)
 
         cprint("To play this game, you must choose from a list of options presented "
                "\nto you. Insert the number of the choice you want to make. Keep in "
@@ -31,7 +31,7 @@ def terms():
                 level_3()  # Starts level 3 once both level 1 and 2 are completed
                 return False
             else:
-                time.sleep(0.3)
+                t.sleep(0.3)
     else:
         exit()
 
