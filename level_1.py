@@ -1,7 +1,7 @@
 import time as t
 import random
 from tqdm import tqdm
-from functions import door, Window, Backpack, Mirror, Bookshelf, Spacesuit, Bed, Suitcase, Sink, Toolbox
+from functions import Door, Window, Backpack, Mirror, Bookshelf, Spacesuit, Bed, Suitcase, Sink, Toolbox
 
 HasBackPack = False
 HasHealthPack = False
@@ -12,7 +12,7 @@ codesegment1 = random.randint(0, 9)
 codesegment2 = random.randint(0, 9)
 codesegment3 = random.randint(0, 9)
 code = int(str(codesegment1) + str(codesegment2) + str(codesegment3))
-items = ["door", "Window", "Backpack", "Mirror", "Bookshelf", "Spacesuit"]
+items = ["door", "Window", "Backpack", "Mirror", "Bookshelf", "Spacesuit", "Bed", "Suitcase", "Sink", "Toolbox"]
 code1location = random.randint(1, 3)
 code2location = random.randint(4, 6)
 code3location = random.randint(7, 9)
@@ -23,13 +23,13 @@ def menu(itemlist, question):
         print(itemlist.index(item), item)
         
     while True:
-        result = input(question)
+        doorcode = input(question)
         try:
-            result = int(result)
+            doorcode = int(doorcode)
             break
         except ValueError:
             print("Selection must be whole number between 0-9:")
-    return result
+    return doorcode
         
 
 def level_1():
@@ -58,7 +58,7 @@ def level_1():
                       "\nthe planet below, taking you with it.")
                 t.sleep(1)
                 while True:  # Will not accept any input except for enter
-                    restart = input("You have died. Input the enter key to restart. ")
+                    restart = input("You have died. Hit the enter key to restart. ")
 
                     if restart == "":
                         print("-------------------------------------")
@@ -108,7 +108,7 @@ def level_1():
             print("Please enter either 1, 2, or 3.")
 
     while True:  # Menu for third encounter, the coded door
-        choice = menu(items, "What do you want to inspect?")
+        choice = menu(items, "What do you want to inspect?\n")
         if choice == 1:
             Window(choice, code1location, codesegment1)
         elif choice == 2:
@@ -127,13 +127,14 @@ def level_1():
             Sink(choice, code3location, codesegment3)
         elif choice == 9:
             Toolbox(choice, code3location, codesegment3)
-            result = door(code)
+        else:
+            result = Door(code)
+            global result
         if result == 1:
+            print("The bulkhead slowly opens, revealing a long, empty corridor."
+                  "\n The left corridor has two doors, and the right has one.")
+            t.sleep(1)
             break
-
-    print("The bulkhead slowly opens, revealing a long, empty corridor."
-          "\n The left corridor has two doors, and the right has one.")
-    t.sleep(1)
 
     while True:  # Fourth encounter
         print("Which direction do you go?")
@@ -153,7 +154,7 @@ def level_1():
                       "\n as the airlock cycles. The outer bulkhead opens, releasing you into the"
                       "\n infinite void of space.")
                 while True:  # Will not accept any input except for enter
-                    restart = input("You have died. Input the enter key to restart. ")
+                    restart = input("You have died. Hit the enter key to restart. ")
 
                     if restart == "":
                         print("-------------------------------------")

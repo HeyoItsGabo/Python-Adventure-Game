@@ -1,5 +1,6 @@
 import time
-from termcolor import colored, cprint
+from termcolor import cprint
+
 
 # "Animation" for title screen, with credits
 def title():
@@ -9,9 +10,7 @@ def title():
     line4 = r""" | |__| (_) \__ \ |_     | | | | |     ___) | |_) | (_| | (_|  __/ """
     line5 = r""" |_____\___/|___/\__|    |_|_| |_|    |____/| .__/ \__,_|\___\___| """
     line6 = r"""                                            |_| """
-
     creds = "Developed by Gabe Wightman"
-
     time.sleep(0.4)
     cprint(line1, 'green')
     time.sleep(0.4)
@@ -29,9 +28,9 @@ def title():
 
 
 # Menu for items to find door code
-def menu(list, question):
-    for item in list:
-        print(list.index(item), item)
+def menu(menulist, question):
+    for item in menulist:
+        print(menulist.index(item), item)
     while True:
         result = input(question)
         try:
@@ -43,64 +42,63 @@ def menu(list, question):
 
 
 # Input for code to door
-def door(code):
-    cprint("You walk to the bulkhead, and see a keypad. Based on what you see,"
-           "\nthe code must be 4 digits long. ")
+def Door(code):
+    print("You walk to the bulkhead, and see a keypad. Based on what you see,"
+          "\nthe code must be 4 digits long. ")
     while True:
         try:
-            option1 = int(input(colored("Digit one: ", 'green')))
+            option1 = int(input("Digit one: "))
             break
         except ValueError:
-            cprint("Digit one must be a whole number 0-9.", 'green')
+            print("Digit one must be a whole number 0-9.")
     while True:
         try:
-            option2 = int(input(colored("Digit two: ", 'green')))
+            option2 = int(input("Digit two: "))
             break
         except ValueError:
-            cprint("Digit two must be a whole number 0-9.", 'green')
+            print("Digit two must be a whole number 0-9.")
     while True:
         try:
-            option3 = int(input(colored("Digit three: ", 'green')))
+            option3 = int(input("Digit three: ", ))
             break
         except ValueError:
-            cprint("Digit three must be a whole number 0-9.", 'green')
+            cprint("Digit three must be a whole number 0-9.")
 
-            
     chosencode = int(str(option1) + str(option2) + str(option3))
     print("")
     if chosencode == code:
-        cprint("The keypad flashes green, as the bulkhead opens.", 'green')
+        print("The keypad flashes green, as the bulkhead opens.")
         return 1
     else:
-        cprint("The keypad beeps once, and flashes red. The "
-               "\ninputted code is wrong", 'green')
+        print("The keypad beeps once, and flashes red. The "
+              "\ninputted code is wrong. ")
         return 0
 
 
 # Code #1 check location: Window
 def Window(choice, codelocation, codevalue):
     print("")
-    cprint("You look at the window. Only four inches of reinforced glass"
-           "\nbetween you and the void.", 'green')
+    print("You look at the window. Only four inches of reinforced glass"
+          "\nbetween you and the void.")
     if choice == codelocation:
-        cprint("Carved into the frame, you see the number", 'green' + str(codevalue) + ".", 'green')
+        print("Carved into the frame, you see the number " + str(codevalue) + ".")
         print("")
     else:
-        cprint("You find no code.", 'green')
+        print("You find no code.")
         print("")
-    
+
 
 # Code #1 check location: Backpack
 def Backpack(choice, codelocation, codevalue):
     print("")
-    cprint("Rifling through the backpack, you find a scratched up notebook.", 'green')
+    cprint("Rifling through the backpack, you find a scratched up notebook.")
     if choice == codelocation:
-        cprint("Scribbled into one of the pages, you see the number", 'green' + str(codevalue) + ".", 'green')
+        print("Scribbled into one of the pages, you see the number " + str(codevalue) + ".")
         print("")
     else:
-        cprint("You find no code.", 'green')
+        print("You find no code.")
         print("")
-        
+
 
 # Code #1 check location: Mirror
 def Mirror(choice, codelocation, codevalue):
@@ -127,6 +125,7 @@ def Bookshelf(choice, codelocation, codevalue):
     else:
         print("You find no code.")
         print("")
+
 
 # Code #2 check location: Spacesuit
 def Spacesuit(choice, codelocation, codevalue):
@@ -186,4 +185,3 @@ def Toolbox(choice, codelocation, codevalue):
     else:
         print("You find no code.")
         print("")
-
