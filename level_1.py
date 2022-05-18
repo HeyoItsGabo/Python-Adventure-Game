@@ -18,6 +18,17 @@ code2location = random.randint(4, 6)
 code3location = random.randint(7, 9)
 
 
+def die():
+    while True:  # Will not accept any input except for enter
+        restart = input("You have died. Hit the enter key to restart. ")
+        if restart == "":
+            print("-------------------------------------")
+            t.sleep(1)
+            level_1()
+        else:
+            t.sleep(1)
+
+
 def menu(itemlist, question):
     for item in itemlist:
         print(itemlist.index(item), item)
@@ -57,15 +68,7 @@ def level_1():
                 print("Choosing to ignore the sound, you go back to sleep. The spaceship plummets to "
                       "\nthe planet below, taking you with it.")
                 t.sleep(1)
-                while True:  # Will not accept any input except for enter
-                    restart = input("You have died. Hit the enter key to restart. ")
-
-                    if restart == "":
-                        print("-------------------------------------")
-                        t.sleep(1)
-                        level_1()
-                    else:
-                        t.sleep(1)
+                die()
 
             elif int(wakeup) == 2:  # Correct path
                 break
@@ -107,6 +110,8 @@ def level_1():
         except ValueError:
             print("Please enter either 1, 2, or 3.")
 
+    print('You walk over to the bulkhead, and notice the keypad next to it. You must inspect'
+          '\nitems around the room in order to retrieve the three-digit code.')
     while True:  # Menu for third encounter, the coded door
         choice = menu(items, "What do you want to inspect?\n")
         if choice == 1:
@@ -127,10 +132,11 @@ def level_1():
             Sink(choice, code3location, codesegment3)
         elif choice == 9:
             Toolbox(choice, code3location, codesegment3)
+        elif choice == 10:
+            print(code)
         else:
-            result = Door(code)
-            global result
-        if result == 1:
+            pass
+        if Door(code):
             print("The bulkhead slowly opens, revealing a long, empty corridor."
                   "\n The left corridor has two doors, and the right has one.")
             t.sleep(1)
@@ -151,17 +157,9 @@ def level_1():
                 print("As you pass through the corridor, you get an eerie feeling that you are not alone.")
                 t.sleep(0.5)
                 print("Suddenly, another bulkhead shuts rapidly behind you. You hear a loud hissing sound"
-                      "\n as the airlock cycles. The outer bulkhead opens, releasing you into the"
-                      "\n infinite void of space.")
-                while True:  # Will not accept any input except for enter
-                    restart = input("You have died. Hit the enter key to restart. ")
-
-                    if restart == "":
-                        print("-------------------------------------")
-                        t.sleep(1)
-                        level_1()
-                    else:
-                        t.sleep(1)
+                      "\nas the airlock cycles. The outer bulkhead opens, releasing you into the"
+                      "\ninfinite void of space.")
+                die()
 
             else:
                 print("Please enter either 1 or 2.")
@@ -172,18 +170,20 @@ def level_1():
         print("Which door do you choose to enter?")
         t.sleep(1)
         print("1- The cold door"
-              "\n 2- The hot door")
+              "\n2-The hot door")
         tempdoor = input()
         try:
             if int(tempdoor) == 1:
-                print("")
+                print("As you enter the cold room, you notice cryogenic tubes containing what"
+                      "\nappear to be bodies. You knew these people at one point. Something"
+                      "\nseems off about this room.")
+                t.sleep(1)
+                print("The room gets colder and colder, as you slowly succumb to sleep.")
+                die()
             elif int(tempdoor) == 2:
-                print("")
+                print("You push open the door to see the spacecraft's engine sparking rapidly. Perhaps you can fix it.")
                 break
             else:
                 print("Please enter either 1 or 2.")
         except ValueError:
             print("Please enter either 1 or 2.")
-
-
-level_1()

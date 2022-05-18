@@ -44,7 +44,7 @@ def menu(menulist, question):
 # Input for code to door
 def Door(code):
     print("You walk to the bulkhead, and see a keypad. Based on what you see,"
-          "\nthe code must be 4 digits long. ")
+          "\nthe code must be 3 digits long. ")
     while True:
         try:
             option1 = int(input("Digit one: "))
@@ -68,11 +68,11 @@ def Door(code):
     print("")
     if chosencode == code:
         print("The keypad flashes green, as the bulkhead opens.")
-        return 1
+        return True
     else:
         print("The keypad beeps once, and flashes red. The "
               "\ninputted code is wrong. ")
-        return 0
+        return False
 
 
 # Code #1 check location: Window
